@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <title>Code coverage report for node-npmtest-mocha/mocha/lib/runner.js</title>
     <meta charset="utf-8">
     <style>
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-mocha/mocha/lib/</a> » runner.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-mocha/mocha/lib/</a> &#187; runner.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -2205,24 +2207,24 @@ module.exports = Runner;
  * @param {boolean} [delay] Whether or not to delay execution of root suite
  * until ready.
  */
-<span class="fstat-no" title="function not covered">function Runner (suite, delay) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  this._globals = [];</span>
-<span class="cstat-no" title="statement not covered">  this._abort = false;</span>
-<span class="cstat-no" title="statement not covered">  this._delay = delay;</span>
-<span class="cstat-no" title="statement not covered">  this.suite = suite;</span>
-<span class="cstat-no" title="statement not covered">  this.started = false;</span>
-<span class="cstat-no" title="statement not covered">  this.total = suite.total();</span>
-<span class="cstat-no" title="statement not covered">  this.failures = 0;</span>
-<span class="cstat-no" title="statement not covered">  this.on('test end', <span class="fstat-no" title="function not covered">function (test) {</span></span>
-<span class="cstat-no" title="statement not covered">    self.checkGlobals(test);</span>
+<span class="fstat-no" title="function not covered" >function Runner (suite, delay) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  this._globals = [];</span>
+<span class="cstat-no" title="statement not covered" >  this._abort = false;</span>
+<span class="cstat-no" title="statement not covered" >  this._delay = delay;</span>
+<span class="cstat-no" title="statement not covered" >  this.suite = suite;</span>
+<span class="cstat-no" title="statement not covered" >  this.started = false;</span>
+<span class="cstat-no" title="statement not covered" >  this.total = suite.total();</span>
+<span class="cstat-no" title="statement not covered" >  this.failures = 0;</span>
+<span class="cstat-no" title="statement not covered" >  this.on('test end', <span class="fstat-no" title="function not covered" >function (test) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self.checkGlobals(test);</span>
   });
-<span class="cstat-no" title="statement not covered">  this.on('hook end', <span class="fstat-no" title="function not covered">function (hook) {</span></span>
-<span class="cstat-no" title="statement not covered">    self.checkGlobals(hook);</span>
+<span class="cstat-no" title="statement not covered" >  this.on('hook end', <span class="fstat-no" title="function not covered" >function (hook) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self.checkGlobals(hook);</span>
   });
-<span class="cstat-no" title="statement not covered">  this._defaultGrep = /.*/;</span>
-<span class="cstat-no" title="statement not covered">  this.grep(this._defaultGrep);</span>
-<span class="cstat-no" title="statement not covered">  this.globals(this.globalProps().concat(extraGlobals()));</span>
+<span class="cstat-no" title="statement not covered" >  this._defaultGrep = /.*/;</span>
+<span class="cstat-no" title="statement not covered" >  this.grep(this._defaultGrep);</span>
+<span class="cstat-no" title="statement not covered" >  this.globals(this.globalProps().concat(extraGlobals()));</span>
 }
 &nbsp;
 /**
@@ -2231,7 +2233,7 @@ module.exports = Runner;
  * @param {Function} fn
  * @api private
  */
-Runner.immediately = global.setImmediate || <span class="branch-1 cbranch-no" title="branch not covered">process.nextTick;</span>
+Runner.immediately = global.setImmediate || <span class="branch-1 cbranch-no" title="branch not covered" >process.nextTick;</span>
 &nbsp;
 /**
  * Inherit from `EventEmitter.prototype`.
@@ -2250,12 +2252,12 @@ inherits(Runner, EventEmitter);
  * @param {boolean} invert
  * @return {Runner} Runner instance.
  */
-Runner.prototype.grep = <span class="fstat-no" title="function not covered">function (re, invert) {</span>
-<span class="cstat-no" title="statement not covered">  debug('grep %s', re);</span>
-<span class="cstat-no" title="statement not covered">  this._grep = re;</span>
-<span class="cstat-no" title="statement not covered">  this._invert = invert;</span>
-<span class="cstat-no" title="statement not covered">  this.total = this.grepTotal(this.suite);</span>
-<span class="cstat-no" title="statement not covered">  return this;</span>
+Runner.prototype.grep = <span class="fstat-no" title="function not covered" >function (re, invert) {</span>
+<span class="cstat-no" title="statement not covered" >  debug('grep %s', re);</span>
+<span class="cstat-no" title="statement not covered" >  this._grep = re;</span>
+<span class="cstat-no" title="statement not covered" >  this._invert = invert;</span>
+<span class="cstat-no" title="statement not covered" >  this.total = this.grepTotal(this.suite);</span>
+<span class="cstat-no" title="statement not covered" >  return this;</span>
 };
 &nbsp;
 /**
@@ -2268,21 +2270,21 @@ Runner.prototype.grep = <span class="fstat-no" title="function not covered">func
  * @param {Suite} suite
  * @return {number}
  */
-Runner.prototype.grepTotal = <span class="fstat-no" title="function not covered">function (suite) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var total = 0;</span>
+Runner.prototype.grepTotal = <span class="fstat-no" title="function not covered" >function (suite) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var total = 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  suite.eachTest(<span class="fstat-no" title="function not covered">function (test) {</span></span>
-<span class="cstat-no" title="statement not covered">    var match = self._grep.test(test.fullTitle());</span>
-<span class="cstat-no" title="statement not covered">    if (self._invert) {</span>
-<span class="cstat-no" title="statement not covered">      match = !match;</span>
+<span class="cstat-no" title="statement not covered" >  suite.eachTest(<span class="fstat-no" title="function not covered" >function (test) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var match = self._grep.test(test.fullTitle());</span>
+<span class="cstat-no" title="statement not covered" >    if (self._invert) {</span>
+<span class="cstat-no" title="statement not covered" >      match = !match;</span>
     }
-<span class="cstat-no" title="statement not covered">    if (match) {</span>
-<span class="cstat-no" title="statement not covered">      total++;</span>
+<span class="cstat-no" title="statement not covered" >    if (match) {</span>
+<span class="cstat-no" title="statement not covered" >      total++;</span>
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return total;</span>
+<span class="cstat-no" title="statement not covered" >  return total;</span>
 };
 &nbsp;
 /**
@@ -2291,18 +2293,18 @@ Runner.prototype.grepTotal = <span class="fstat-no" title="function not covered"
  * @return {Array}
  * @api private
  */
-Runner.prototype.globalProps = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  var props = keys(global);</span>
+Runner.prototype.globalProps = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  var props = keys(global);</span>
 &nbsp;
   // non-enumerables
-<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; globals.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered">    if (~indexOf(props, globals[i])) {</span>
-<span class="cstat-no" title="statement not covered">      continue;</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; globals.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >    if (~indexOf(props, globals[i])) {</span>
+<span class="cstat-no" title="statement not covered" >      continue;</span>
     }
-<span class="cstat-no" title="statement not covered">    props.push(globals[i]);</span>
+<span class="cstat-no" title="statement not covered" >    props.push(globals[i]);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return props;</span>
+<span class="cstat-no" title="statement not covered" >  return props;</span>
 };
 &nbsp;
 /**
@@ -2314,13 +2316,13 @@ Runner.prototype.globalProps = <span class="fstat-no" title="function not covere
  * @param {Array} arr
  * @return {Runner} Runner instance.
  */
-Runner.prototype.globals = <span class="fstat-no" title="function not covered">function (arr) {</span>
-<span class="cstat-no" title="statement not covered">  if (!arguments.length) {</span>
-<span class="cstat-no" title="statement not covered">    return this._globals;</span>
+Runner.prototype.globals = <span class="fstat-no" title="function not covered" >function (arr) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!arguments.length) {</span>
+<span class="cstat-no" title="statement not covered" >    return this._globals;</span>
   }
-<span class="cstat-no" title="statement not covered">  debug('globals %j', arr);</span>
-<span class="cstat-no" title="statement not covered">  this._globals = this._globals.concat(arr);</span>
-<span class="cstat-no" title="statement not covered">  return this;</span>
+<span class="cstat-no" title="statement not covered" >  debug('globals %j', arr);</span>
+<span class="cstat-no" title="statement not covered" >  this._globals = this._globals.concat(arr);</span>
+<span class="cstat-no" title="statement not covered" >  return this;</span>
 };
 &nbsp;
 /**
@@ -2328,31 +2330,31 @@ Runner.prototype.globals = <span class="fstat-no" title="function not covered">f
  *
  * @api private
  */
-Runner.prototype.checkGlobals = <span class="fstat-no" title="function not covered">function (test) {</span>
-<span class="cstat-no" title="statement not covered">  if (this.ignoreLeaks) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+Runner.prototype.checkGlobals = <span class="fstat-no" title="function not covered" >function (test) {</span>
+<span class="cstat-no" title="statement not covered" >  if (this.ignoreLeaks) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
-<span class="cstat-no" title="statement not covered">  var ok = this._globals;</span>
+<span class="cstat-no" title="statement not covered" >  var ok = this._globals;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var globals = this.globalProps();</span>
-<span class="cstat-no" title="statement not covered">  var leaks;</span>
+<span class="cstat-no" title="statement not covered" >  var globals = this.globalProps();</span>
+<span class="cstat-no" title="statement not covered" >  var leaks;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (test) {</span>
-<span class="cstat-no" title="statement not covered">    ok = ok.concat(test._allowedGlobals || []);</span>
+<span class="cstat-no" title="statement not covered" >  if (test) {</span>
+<span class="cstat-no" title="statement not covered" >    ok = ok.concat(test._allowedGlobals || []);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (this.prevGlobalsLength === globals.length) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+<span class="cstat-no" title="statement not covered" >  if (this.prevGlobalsLength === globals.length) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
-<span class="cstat-no" title="statement not covered">  this.prevGlobalsLength = globals.length;</span>
+<span class="cstat-no" title="statement not covered" >  this.prevGlobalsLength = globals.length;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  leaks = filterLeaks(ok, globals);</span>
-<span class="cstat-no" title="statement not covered">  this._globals = this._globals.concat(leaks);</span>
+<span class="cstat-no" title="statement not covered" >  leaks = filterLeaks(ok, globals);</span>
+<span class="cstat-no" title="statement not covered" >  this._globals = this._globals.concat(leaks);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (leaks.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered">    this.fail(test, new Error('global leaks detected: ' + leaks.join(', ') + ''));</span>
-  } else <span class="cstat-no" title="statement not covered">if (leaks.length) {</span>
-<span class="cstat-no" title="statement not covered">    this.fail(test, new Error('global leak detected: ' + leaks[0]));</span>
+<span class="cstat-no" title="statement not covered" >  if (leaks.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >    this.fail(test, new Error('global leaks detected: ' + leaks.join(', ') + ''));</span>
+  } else <span class="cstat-no" title="statement not covered" >if (leaks.length) {</span>
+<span class="cstat-no" title="statement not covered" >    this.fail(test, new Error('global leak detected: ' + leaks[0]));</span>
   }
 };
 &nbsp;
@@ -2363,27 +2365,27 @@ Runner.prototype.checkGlobals = <span class="fstat-no" title="function not cover
  * @param {Test} test
  * @param {Error} err
  */
-Runner.prototype.fail = <span class="fstat-no" title="function not covered">function (test, err) {</span>
-<span class="cstat-no" title="statement not covered">  if (test.isPending()) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+Runner.prototype.fail = <span class="fstat-no" title="function not covered" >function (test, err) {</span>
+<span class="cstat-no" title="statement not covered" >  if (test.isPending()) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  ++this.failures;</span>
-<span class="cstat-no" title="statement not covered">  test.state = 'failed';</span>
+<span class="cstat-no" title="statement not covered" >  ++this.failures;</span>
+<span class="cstat-no" title="statement not covered" >  test.state = 'failed';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!(err instanceof Error || err &amp;&amp; typeof err.message === 'string')) {</span>
-<span class="cstat-no" title="statement not covered">    err = new Error('the ' + type(err) + ' ' + stringify(err) + ' was thrown, throw an Error :)');</span>
+<span class="cstat-no" title="statement not covered" >  if (!(err instanceof Error || err &amp;&amp; typeof err.message === 'string')) {</span>
+<span class="cstat-no" title="statement not covered" >    err = new Error('the ' + type(err) + ' ' + stringify(err) + ' was thrown, throw an Error :)');</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  try {</span>
-<span class="cstat-no" title="statement not covered">    err.stack = (this.fullStackTrace || !err.stack)</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    err.stack = (this.fullStackTrace || !err.stack)</span>
       ? err.stack
       : stackFilter(err.stack);
   } catch (ignored) {
     // some environments do not take kindly to monkeying with the stack
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.emit('fail', test, err);</span>
+<span class="cstat-no" title="statement not covered" >  this.emit('fail', test, err);</span>
 };
 &nbsp;
 /**
@@ -2406,15 +2408,15 @@ Runner.prototype.fail = <span class="fstat-no" title="function not covered">func
  * @param {Hook} hook
  * @param {Error} err
  */
-Runner.prototype.failHook = <span class="fstat-no" title="function not covered">function (hook, err) {</span>
-<span class="cstat-no" title="statement not covered">  if (hook.ctx &amp;&amp; hook.ctx.currentTest) {</span>
-<span class="cstat-no" title="statement not covered">    hook.originalTitle = hook.originalTitle || hook.title;</span>
-<span class="cstat-no" title="statement not covered">    hook.title = hook.originalTitle + ' for "' + hook.ctx.currentTest.title + '"';</span>
+Runner.prototype.failHook = <span class="fstat-no" title="function not covered" >function (hook, err) {</span>
+<span class="cstat-no" title="statement not covered" >  if (hook.ctx &amp;&amp; hook.ctx.currentTest) {</span>
+<span class="cstat-no" title="statement not covered" >    hook.originalTitle = hook.originalTitle || hook.title;</span>
+<span class="cstat-no" title="statement not covered" >    hook.title = hook.originalTitle + ' for "' + hook.ctx.currentTest.title + '"';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.fail(hook, err);</span>
-<span class="cstat-no" title="statement not covered">  if (this.suite.bail()) {</span>
-<span class="cstat-no" title="statement not covered">    this.emit('end');</span>
+<span class="cstat-no" title="statement not covered" >  this.fail(hook, err);</span>
+<span class="cstat-no" title="statement not covered" >  if (this.suite.bail()) {</span>
+<span class="cstat-no" title="statement not covered" >    this.emit('end');</span>
   }
 };
 &nbsp;
@@ -2426,59 +2428,59 @@ Runner.prototype.failHook = <span class="fstat-no" title="function not covered">
  * @param {Function} fn
  */
 &nbsp;
-Runner.prototype.hook = <span class="fstat-no" title="function not covered">function (name, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var suite = this.suite;</span>
-<span class="cstat-no" title="statement not covered">  var hooks = suite['_' + name];</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Runner.prototype.hook = <span class="fstat-no" title="function not covered" >function (name, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var suite = this.suite;</span>
+<span class="cstat-no" title="statement not covered" >  var hooks = suite['_' + name];</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function next (i) {</span>
-<span class="cstat-no" title="statement not covered">    var hook = hooks[i];</span>
-<span class="cstat-no" title="statement not covered">    if (!hook) {</span>
-<span class="cstat-no" title="statement not covered">      return fn();</span>
+<span class="fstat-no" title="function not covered" >  function next (i) {</span>
+<span class="cstat-no" title="statement not covered" >    var hook = hooks[i];</span>
+<span class="cstat-no" title="statement not covered" >    if (!hook) {</span>
+<span class="cstat-no" title="statement not covered" >      return fn();</span>
     }
-<span class="cstat-no" title="statement not covered">    self.currentRunnable = hook;</span>
+<span class="cstat-no" title="statement not covered" >    self.currentRunnable = hook;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    hook.ctx.currentTest = self.test;</span>
+<span class="cstat-no" title="statement not covered" >    hook.ctx.currentTest = self.test;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    self.emit('hook', hook);</span>
+<span class="cstat-no" title="statement not covered" >    self.emit('hook', hook);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (!hook.listeners('error').length) {</span>
-<span class="cstat-no" title="statement not covered">      hook.on('error', <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">        self.failHook(hook, err);</span>
+<span class="cstat-no" title="statement not covered" >    if (!hook.listeners('error').length) {</span>
+<span class="cstat-no" title="statement not covered" >      hook.on('error', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >        self.failHook(hook, err);</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    hook.run(<span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">      var testError = hook.error();</span>
-<span class="cstat-no" title="statement not covered">      if (testError) {</span>
-<span class="cstat-no" title="statement not covered">        self.fail(self.test, testError);</span>
+<span class="cstat-no" title="statement not covered" >    hook.run(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      var testError = hook.error();</span>
+<span class="cstat-no" title="statement not covered" >      if (testError) {</span>
+<span class="cstat-no" title="statement not covered" >        self.fail(self.test, testError);</span>
       }
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        if (err instanceof Pending) {</span>
-<span class="cstat-no" title="statement not covered">          if (name === 'beforeEach' || name === 'afterEach') {</span>
-<span class="cstat-no" title="statement not covered">            self.test.pending = true;</span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err instanceof Pending) {</span>
+<span class="cstat-no" title="statement not covered" >          if (name === 'beforeEach' || name === 'afterEach') {</span>
+<span class="cstat-no" title="statement not covered" >            self.test.pending = true;</span>
           } else {
-<span class="cstat-no" title="statement not covered">            utils.forEach(suite.tests, <span class="fstat-no" title="function not covered">function (test) {</span></span>
-<span class="cstat-no" title="statement not covered">              test.pending = true;</span>
+<span class="cstat-no" title="statement not covered" >            utils.forEach(suite.tests, <span class="fstat-no" title="function not covered" >function (test) {</span></span>
+<span class="cstat-no" title="statement not covered" >              test.pending = true;</span>
             });
             // a pending hook won't be executed twice.
-<span class="cstat-no" title="statement not covered">            hook.pending = true;</span>
+<span class="cstat-no" title="statement not covered" >            hook.pending = true;</span>
           }
         } else {
-<span class="cstat-no" title="statement not covered">          self.failHook(hook, err);</span>
+<span class="cstat-no" title="statement not covered" >          self.failHook(hook, err);</span>
 &nbsp;
           // stop executing hooks, notify callee of hook err
-<span class="cstat-no" title="statement not covered">          return fn(err);</span>
+<span class="cstat-no" title="statement not covered" >          return fn(err);</span>
         }
       }
-<span class="cstat-no" title="statement not covered">      self.emit('hook end', hook);</span>
-<span class="cstat-no" title="statement not covered">      delete hook.ctx.currentTest;</span>
-<span class="cstat-no" title="statement not covered">      next(++i);</span>
+<span class="cstat-no" title="statement not covered" >      self.emit('hook end', hook);</span>
+<span class="cstat-no" title="statement not covered" >      delete hook.ctx.currentTest;</span>
+<span class="cstat-no" title="statement not covered" >      next(++i);</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  Runner.immediately(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">    next(0);</span>
+<span class="cstat-no" title="statement not covered" >  Runner.immediately(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    next(0);</span>
   });
 };
 &nbsp;
@@ -2491,30 +2493,30 @@ Runner.prototype.hook = <span class="fstat-no" title="function not covered">func
  * @param {Array} suites
  * @param {Function} fn
  */
-Runner.prototype.hooks = <span class="fstat-no" title="function not covered">function (name, suites, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var orig = this.suite;</span>
+Runner.prototype.hooks = <span class="fstat-no" title="function not covered" >function (name, suites, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var orig = this.suite;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function next (suite) {</span>
-<span class="cstat-no" title="statement not covered">    self.suite = suite;</span>
+<span class="fstat-no" title="function not covered" >  function next (suite) {</span>
+<span class="cstat-no" title="statement not covered" >    self.suite = suite;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (!suite) {</span>
-<span class="cstat-no" title="statement not covered">      self.suite = orig;</span>
-<span class="cstat-no" title="statement not covered">      return fn();</span>
+<span class="cstat-no" title="statement not covered" >    if (!suite) {</span>
+<span class="cstat-no" title="statement not covered" >      self.suite = orig;</span>
+<span class="cstat-no" title="statement not covered" >      return fn();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    self.hook(name, <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        var errSuite = self.suite;</span>
-<span class="cstat-no" title="statement not covered">        self.suite = orig;</span>
-<span class="cstat-no" title="statement not covered">        return fn(err, errSuite);</span>
+<span class="cstat-no" title="statement not covered" >    self.hook(name, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        var errSuite = self.suite;</span>
+<span class="cstat-no" title="statement not covered" >        self.suite = orig;</span>
+<span class="cstat-no" title="statement not covered" >        return fn(err, errSuite);</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      next(suites.pop());</span>
+<span class="cstat-no" title="statement not covered" >      next(suites.pop());</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  next(suites.pop());</span>
+<span class="cstat-no" title="statement not covered" >  next(suites.pop());</span>
 };
 &nbsp;
 /**
@@ -2524,9 +2526,9 @@ Runner.prototype.hooks = <span class="fstat-no" title="function not covered">fun
  * @param {Function} fn
  * @api private
  */
-Runner.prototype.hookUp = <span class="fstat-no" title="function not covered">function (name, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var suites = [this.suite].concat(this.parents()).reverse();</span>
-<span class="cstat-no" title="statement not covered">  this.hooks(name, suites, fn);</span>
+Runner.prototype.hookUp = <span class="fstat-no" title="function not covered" >function (name, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var suites = [this.suite].concat(this.parents()).reverse();</span>
+<span class="cstat-no" title="statement not covered" >  this.hooks(name, suites, fn);</span>
 };
 &nbsp;
 /**
@@ -2536,9 +2538,9 @@ Runner.prototype.hookUp = <span class="fstat-no" title="function not covered">fu
  * @param {Function} fn
  * @api private
  */
-Runner.prototype.hookDown = <span class="fstat-no" title="function not covered">function (name, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var suites = [this.suite].concat(this.parents());</span>
-<span class="cstat-no" title="statement not covered">  this.hooks(name, suites, fn);</span>
+Runner.prototype.hookDown = <span class="fstat-no" title="function not covered" >function (name, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var suites = [this.suite].concat(this.parents());</span>
+<span class="cstat-no" title="statement not covered" >  this.hooks(name, suites, fn);</span>
 };
 &nbsp;
 /**
@@ -2548,14 +2550,14 @@ Runner.prototype.hookDown = <span class="fstat-no" title="function not covered">
  * @return {Array}
  * @api private
  */
-Runner.prototype.parents = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  var suite = this.suite;</span>
-<span class="cstat-no" title="statement not covered">  var suites = [];</span>
-<span class="cstat-no" title="statement not covered">  while (suite.parent) {</span>
-<span class="cstat-no" title="statement not covered">    suite = suite.parent;</span>
-<span class="cstat-no" title="statement not covered">    suites.push(suite);</span>
+Runner.prototype.parents = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  var suite = this.suite;</span>
+<span class="cstat-no" title="statement not covered" >  var suites = [];</span>
+<span class="cstat-no" title="statement not covered" >  while (suite.parent) {</span>
+<span class="cstat-no" title="statement not covered" >    suite = suite.parent;</span>
+<span class="cstat-no" title="statement not covered" >    suites.push(suite);</span>
   }
-<span class="cstat-no" title="statement not covered">  return suites;</span>
+<span class="cstat-no" title="statement not covered" >  return suites;</span>
 };
 &nbsp;
 /**
@@ -2564,28 +2566,28 @@ Runner.prototype.parents = <span class="fstat-no" title="function not covered">f
  * @param {Function} fn
  * @api private
  */
-Runner.prototype.runTest = <span class="fstat-no" title="function not covered">function (fn) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var test = this.test;</span>
+Runner.prototype.runTest = <span class="fstat-no" title="function not covered" >function (fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var test = this.test;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!test) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+<span class="cstat-no" title="statement not covered" >  if (!test) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
-<span class="cstat-no" title="statement not covered">  if (this.asyncOnly) {</span>
-<span class="cstat-no" title="statement not covered">    test.asyncOnly = true;</span>
+<span class="cstat-no" title="statement not covered" >  if (this.asyncOnly) {</span>
+<span class="cstat-no" title="statement not covered" >    test.asyncOnly = true;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (this.allowUncaught) {</span>
-<span class="cstat-no" title="statement not covered">    test.allowUncaught = true;</span>
-<span class="cstat-no" title="statement not covered">    return test.run(fn);</span>
+<span class="cstat-no" title="statement not covered" >  if (this.allowUncaught) {</span>
+<span class="cstat-no" title="statement not covered" >    test.allowUncaught = true;</span>
+<span class="cstat-no" title="statement not covered" >    return test.run(fn);</span>
   }
-<span class="cstat-no" title="statement not covered">  try {</span>
-<span class="cstat-no" title="statement not covered">    test.on('error', <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">      self.fail(test, err);</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    test.on('error', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      self.fail(test, err);</span>
     });
-<span class="cstat-no" title="statement not covered">    test.run(fn);</span>
+<span class="cstat-no" title="statement not covered" >    test.run(fn);</span>
   } catch (err) {
-<span class="cstat-no" title="statement not covered">    fn(err);</span>
+<span class="cstat-no" title="statement not covered" >    fn(err);</span>
   }
 };
 &nbsp;
@@ -2596,65 +2598,65 @@ Runner.prototype.runTest = <span class="fstat-no" title="function not covered">f
  * @param {Suite} suite
  * @param {Function} fn
  */
-Runner.prototype.runTests = <span class="fstat-no" title="function not covered">function (suite, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var tests = suite.tests.slice();</span>
-<span class="cstat-no" title="statement not covered">  var test;</span>
+Runner.prototype.runTests = <span class="fstat-no" title="function not covered" >function (suite, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var tests = suite.tests.slice();</span>
+<span class="cstat-no" title="statement not covered" >  var test;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function hookErr (_, errSuite, after) {</span>
+<span class="fstat-no" title="function not covered" >  function hookErr (_, errSuite, after) {</span>
     // before/after Each hook for errSuite failed:
-<span class="cstat-no" title="statement not covered">    var orig = self.suite;</span>
+<span class="cstat-no" title="statement not covered" >    var orig = self.suite;</span>
 &nbsp;
     // for failed 'after each' hook start from errSuite parent,
     // otherwise start from errSuite itself
-<span class="cstat-no" title="statement not covered">    self.suite = after ? errSuite.parent : errSuite;</span>
+<span class="cstat-no" title="statement not covered" >    self.suite = after ? errSuite.parent : errSuite;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (self.suite) {</span>
+<span class="cstat-no" title="statement not covered" >    if (self.suite) {</span>
       // call hookUp afterEach
-<span class="cstat-no" title="statement not covered">      self.hookUp('afterEach', <span class="fstat-no" title="function not covered">function (err2, errSuite2) {</span></span>
-<span class="cstat-no" title="statement not covered">        self.suite = orig;</span>
+<span class="cstat-no" title="statement not covered" >      self.hookUp('afterEach', <span class="fstat-no" title="function not covered" >function (err2, errSuite2) {</span></span>
+<span class="cstat-no" title="statement not covered" >        self.suite = orig;</span>
         // some hooks may fail even now
-<span class="cstat-no" title="statement not covered">        if (err2) {</span>
-<span class="cstat-no" title="statement not covered">          return hookErr(err2, errSuite2, true);</span>
+<span class="cstat-no" title="statement not covered" >        if (err2) {</span>
+<span class="cstat-no" title="statement not covered" >          return hookErr(err2, errSuite2, true);</span>
         }
         // report error suite
-<span class="cstat-no" title="statement not covered">        fn(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >        fn(errSuite);</span>
       });
     } else {
       // there is no need calling other 'after each' hooks
-<span class="cstat-no" title="statement not covered">      self.suite = orig;</span>
-<span class="cstat-no" title="statement not covered">      fn(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >      self.suite = orig;</span>
+<span class="cstat-no" title="statement not covered" >      fn(errSuite);</span>
     }
   }
 &nbsp;
-<span class="fstat-no" title="function not covered">  function next (err, errSuite) {</span>
+<span class="fstat-no" title="function not covered" >  function next (err, errSuite) {</span>
     // if we bail after first err
-<span class="cstat-no" title="statement not covered">    if (self.failures &amp;&amp; suite._bail) {</span>
-<span class="cstat-no" title="statement not covered">      return fn();</span>
+<span class="cstat-no" title="statement not covered" >    if (self.failures &amp;&amp; suite._bail) {</span>
+<span class="cstat-no" title="statement not covered" >      return fn();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (self._abort) {</span>
-<span class="cstat-no" title="statement not covered">      return fn();</span>
+<span class="cstat-no" title="statement not covered" >    if (self._abort) {</span>
+<span class="cstat-no" title="statement not covered" >      return fn();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (err) {</span>
-<span class="cstat-no" title="statement not covered">      return hookErr(err, errSuite, true);</span>
+<span class="cstat-no" title="statement not covered" >    if (err) {</span>
+<span class="cstat-no" title="statement not covered" >      return hookErr(err, errSuite, true);</span>
     }
 &nbsp;
     // next test
-<span class="cstat-no" title="statement not covered">    test = tests.shift();</span>
+<span class="cstat-no" title="statement not covered" >    test = tests.shift();</span>
 &nbsp;
     // all done
-<span class="cstat-no" title="statement not covered">    if (!test) {</span>
-<span class="cstat-no" title="statement not covered">      return fn();</span>
+<span class="cstat-no" title="statement not covered" >    if (!test) {</span>
+<span class="cstat-no" title="statement not covered" >      return fn();</span>
     }
 &nbsp;
     // grep
-<span class="cstat-no" title="statement not covered">    var match = self._grep.test(test.fullTitle());</span>
-<span class="cstat-no" title="statement not covered">    if (self._invert) {</span>
-<span class="cstat-no" title="statement not covered">      match = !match;</span>
+<span class="cstat-no" title="statement not covered" >    var match = self._grep.test(test.fullTitle());</span>
+<span class="cstat-no" title="statement not covered" >    if (self._invert) {</span>
+<span class="cstat-no" title="statement not covered" >      match = !match;</span>
     }
-<span class="cstat-no" title="statement not covered">    if (!match) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!match) {</span>
       // Run immediately only if we have defined a grep. When we
       // define a grep — It can cause maximum callstack error if
       // the grep is doing a large recursive loop by neglecting
@@ -2663,70 +2665,70 @@ Runner.prototype.runTests = <span class="fstat-no" title="function not covered">
       // if we run the whole test suite, because running the whole
       // test suite don't do any immediate recursive loops. Thus,
       // allowing a JS runtime to breathe.
-<span class="cstat-no" title="statement not covered">      if (self._grep !== self._defaultGrep) {</span>
-<span class="cstat-no" title="statement not covered">        Runner.immediately(next);</span>
+<span class="cstat-no" title="statement not covered" >      if (self._grep !== self._defaultGrep) {</span>
+<span class="cstat-no" title="statement not covered" >        Runner.immediately(next);</span>
       } else {
-<span class="cstat-no" title="statement not covered">        next();</span>
+<span class="cstat-no" title="statement not covered" >        next();</span>
       }
-<span class="cstat-no" title="statement not covered">      return;</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (test.isPending()) {</span>
-<span class="cstat-no" title="statement not covered">      self.emit('pending', test);</span>
-<span class="cstat-no" title="statement not covered">      self.emit('test end', test);</span>
-<span class="cstat-no" title="statement not covered">      return next();</span>
+<span class="cstat-no" title="statement not covered" >    if (test.isPending()) {</span>
+<span class="cstat-no" title="statement not covered" >      self.emit('pending', test);</span>
+<span class="cstat-no" title="statement not covered" >      self.emit('test end', test);</span>
+<span class="cstat-no" title="statement not covered" >      return next();</span>
     }
 &nbsp;
     // execute test and hook(s)
-<span class="cstat-no" title="statement not covered">    self.emit('test', self.test = test);</span>
-<span class="cstat-no" title="statement not covered">    self.hookDown('beforeEach', <span class="fstat-no" title="function not covered">function (err, errSuite) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (test.isPending()) {</span>
-<span class="cstat-no" title="statement not covered">        self.emit('pending', test);</span>
-<span class="cstat-no" title="statement not covered">        self.emit('test end', test);</span>
-<span class="cstat-no" title="statement not covered">        return next();</span>
+<span class="cstat-no" title="statement not covered" >    self.emit('test', self.test = test);</span>
+<span class="cstat-no" title="statement not covered" >    self.hookDown('beforeEach', <span class="fstat-no" title="function not covered" >function (err, errSuite) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (test.isPending()) {</span>
+<span class="cstat-no" title="statement not covered" >        self.emit('pending', test);</span>
+<span class="cstat-no" title="statement not covered" >        self.emit('test end', test);</span>
+<span class="cstat-no" title="statement not covered" >        return next();</span>
       }
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        return hookErr(err, errSuite, false);</span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        return hookErr(err, errSuite, false);</span>
       }
-<span class="cstat-no" title="statement not covered">      self.currentRunnable = self.test;</span>
-<span class="cstat-no" title="statement not covered">      self.runTest(<span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">        test = self.test;</span>
-<span class="cstat-no" title="statement not covered">        if (err) {</span>
-<span class="cstat-no" title="statement not covered">          var retry = test.currentRetry();</span>
-<span class="cstat-no" title="statement not covered">          if (err instanceof Pending) {</span>
-<span class="cstat-no" title="statement not covered">            test.pending = true;</span>
-<span class="cstat-no" title="statement not covered">            self.emit('pending', test);</span>
-          } else <span class="cstat-no" title="statement not covered">if (retry &lt; test.retries()) {</span>
-<span class="cstat-no" title="statement not covered">            var clonedTest = test.clone();</span>
-<span class="cstat-no" title="statement not covered">            clonedTest.currentRetry(retry + 1);</span>
-<span class="cstat-no" title="statement not covered">            tests.unshift(clonedTest);</span>
+<span class="cstat-no" title="statement not covered" >      self.currentRunnable = self.test;</span>
+<span class="cstat-no" title="statement not covered" >      self.runTest(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >        test = self.test;</span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          var retry = test.currentRetry();</span>
+<span class="cstat-no" title="statement not covered" >          if (err instanceof Pending) {</span>
+<span class="cstat-no" title="statement not covered" >            test.pending = true;</span>
+<span class="cstat-no" title="statement not covered" >            self.emit('pending', test);</span>
+          } else <span class="cstat-no" title="statement not covered" >if (retry &lt; test.retries()) {</span>
+<span class="cstat-no" title="statement not covered" >            var clonedTest = test.clone();</span>
+<span class="cstat-no" title="statement not covered" >            clonedTest.currentRetry(retry + 1);</span>
+<span class="cstat-no" title="statement not covered" >            tests.unshift(clonedTest);</span>
 &nbsp;
             // Early return + hook trigger so that it doesn't
             // increment the count wrong
-<span class="cstat-no" title="statement not covered">            return self.hookUp('afterEach', next);</span>
+<span class="cstat-no" title="statement not covered" >            return self.hookUp('afterEach', next);</span>
           } else {
-<span class="cstat-no" title="statement not covered">            self.fail(test, err);</span>
+<span class="cstat-no" title="statement not covered" >            self.fail(test, err);</span>
           }
-<span class="cstat-no" title="statement not covered">          self.emit('test end', test);</span>
+<span class="cstat-no" title="statement not covered" >          self.emit('test end', test);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">          if (err instanceof Pending) {</span>
-<span class="cstat-no" title="statement not covered">            return next();</span>
+<span class="cstat-no" title="statement not covered" >          if (err instanceof Pending) {</span>
+<span class="cstat-no" title="statement not covered" >            return next();</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          return self.hookUp('afterEach', next);</span>
+<span class="cstat-no" title="statement not covered" >          return self.hookUp('afterEach', next);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        test.state = 'passed';</span>
-<span class="cstat-no" title="statement not covered">        self.emit('pass', test);</span>
-<span class="cstat-no" title="statement not covered">        self.emit('test end', test);</span>
-<span class="cstat-no" title="statement not covered">        self.hookUp('afterEach', next);</span>
+<span class="cstat-no" title="statement not covered" >        test.state = 'passed';</span>
+<span class="cstat-no" title="statement not covered" >        self.emit('pass', test);</span>
+<span class="cstat-no" title="statement not covered" >        self.emit('test end', test);</span>
+<span class="cstat-no" title="statement not covered" >        self.hookUp('afterEach', next);</span>
       });
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.next = next;</span>
-<span class="cstat-no" title="statement not covered">  this.hookErr = hookErr;</span>
-<span class="cstat-no" title="statement not covered">  next();</span>
+<span class="cstat-no" title="statement not covered" >  this.next = next;</span>
+<span class="cstat-no" title="statement not covered" >  this.hookErr = hookErr;</span>
+<span class="cstat-no" title="statement not covered" >  next();</span>
 };
 &nbsp;
 /**
@@ -2736,82 +2738,82 @@ Runner.prototype.runTests = <span class="fstat-no" title="function not covered">
  * @param {Suite} suite
  * @param {Function} fn
  */
-Runner.prototype.runSuite = <span class="fstat-no" title="function not covered">function (suite, fn) {</span>
-<span class="cstat-no" title="statement not covered">  var i = 0;</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var total = this.grepTotal(suite);</span>
-<span class="cstat-no" title="statement not covered">  var afterAllHookCalled = false;</span>
+Runner.prototype.runSuite = <span class="fstat-no" title="function not covered" >function (suite, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var i = 0;</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var total = this.grepTotal(suite);</span>
+<span class="cstat-no" title="statement not covered" >  var afterAllHookCalled = false;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  debug('run suite %s', suite.fullTitle());</span>
+<span class="cstat-no" title="statement not covered" >  debug('run suite %s', suite.fullTitle());</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!total || (self.failures &amp;&amp; suite._bail)) {</span>
-<span class="cstat-no" title="statement not covered">    return fn();</span>
+<span class="cstat-no" title="statement not covered" >  if (!total || (self.failures &amp;&amp; suite._bail)) {</span>
+<span class="cstat-no" title="statement not covered" >    return fn();</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.emit('suite', this.suite = suite);</span>
+<span class="cstat-no" title="statement not covered" >  this.emit('suite', this.suite = suite);</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function next (errSuite) {</span>
-<span class="cstat-no" title="statement not covered">    if (errSuite) {</span>
+<span class="fstat-no" title="function not covered" >  function next (errSuite) {</span>
+<span class="cstat-no" title="statement not covered" >    if (errSuite) {</span>
       // current suite failed on a hook from errSuite
-<span class="cstat-no" title="statement not covered">      if (errSuite === suite) {</span>
+<span class="cstat-no" title="statement not covered" >      if (errSuite === suite) {</span>
         // if errSuite is current suite
         // continue to the next sibling suite
-<span class="cstat-no" title="statement not covered">        return done();</span>
+<span class="cstat-no" title="statement not covered" >        return done();</span>
       }
       // errSuite is among the parents of current suite
       // stop execution of errSuite and all sub-suites
-<span class="cstat-no" title="statement not covered">      return done(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >      return done(errSuite);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (self._abort) {</span>
-<span class="cstat-no" title="statement not covered">      return done();</span>
+<span class="cstat-no" title="statement not covered" >    if (self._abort) {</span>
+<span class="cstat-no" title="statement not covered" >      return done();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var curr = suite.suites[i++];</span>
-<span class="cstat-no" title="statement not covered">    if (!curr) {</span>
-<span class="cstat-no" title="statement not covered">      return done();</span>
+<span class="cstat-no" title="statement not covered" >    var curr = suite.suites[i++];</span>
+<span class="cstat-no" title="statement not covered" >    if (!curr) {</span>
+<span class="cstat-no" title="statement not covered" >      return done();</span>
     }
 &nbsp;
     // Avoid grep neglecting large number of tests causing a
     // huge recursive loop and thus a maximum call stack error.
     // See comment in `this.runTests()` for more information.
-<span class="cstat-no" title="statement not covered">    if (self._grep !== self._defaultGrep) {</span>
-<span class="cstat-no" title="statement not covered">      Runner.immediately(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">        self.runSuite(curr, next);</span>
+<span class="cstat-no" title="statement not covered" >    if (self._grep !== self._defaultGrep) {</span>
+<span class="cstat-no" title="statement not covered" >      Runner.immediately(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >        self.runSuite(curr, next);</span>
       });
     } else {
-<span class="cstat-no" title="statement not covered">      self.runSuite(curr, next);</span>
+<span class="cstat-no" title="statement not covered" >      self.runSuite(curr, next);</span>
     }
   }
 &nbsp;
-<span class="fstat-no" title="function not covered">  function done (errSuite) {</span>
-<span class="cstat-no" title="statement not covered">    self.suite = suite;</span>
-<span class="cstat-no" title="statement not covered">    self.nextSuite = next;</span>
+<span class="fstat-no" title="function not covered" >  function done (errSuite) {</span>
+<span class="cstat-no" title="statement not covered" >    self.suite = suite;</span>
+<span class="cstat-no" title="statement not covered" >    self.nextSuite = next;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (afterAllHookCalled) {</span>
-<span class="cstat-no" title="statement not covered">      fn(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >    if (afterAllHookCalled) {</span>
+<span class="cstat-no" title="statement not covered" >      fn(errSuite);</span>
     } else {
       // mark that the afterAll block has been called once
       // and so can be skipped if there is an error in it.
-<span class="cstat-no" title="statement not covered">      afterAllHookCalled = true;</span>
+<span class="cstat-no" title="statement not covered" >      afterAllHookCalled = true;</span>
 &nbsp;
       // remove reference to test
-<span class="cstat-no" title="statement not covered">      delete self.test;</span>
+<span class="cstat-no" title="statement not covered" >      delete self.test;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      self.hook('afterAll', <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">        self.emit('suite end', suite);</span>
-<span class="cstat-no" title="statement not covered">        fn(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >      self.hook('afterAll', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >        self.emit('suite end', suite);</span>
+<span class="cstat-no" title="statement not covered" >        fn(errSuite);</span>
       });
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.nextSuite = next;</span>
+<span class="cstat-no" title="statement not covered" >  this.nextSuite = next;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.hook('beforeAll', <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (err) {</span>
-<span class="cstat-no" title="statement not covered">      return done();</span>
+<span class="cstat-no" title="statement not covered" >  this.hook('beforeAll', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (err) {</span>
+<span class="cstat-no" title="statement not covered" >      return done();</span>
     }
-<span class="cstat-no" title="statement not covered">    self.runTests(suite, next);</span>
+<span class="cstat-no" title="statement not covered" >    self.runTests(suite, next);</span>
   });
 };
 &nbsp;
@@ -2821,67 +2823,67 @@ Runner.prototype.runSuite = <span class="fstat-no" title="function not covered">
  * @param {Error} err
  * @api private
  */
-Runner.prototype.uncaught = <span class="fstat-no" title="function not covered">function (err) {</span>
-<span class="cstat-no" title="statement not covered">  if (err) {</span>
-<span class="cstat-no" title="statement not covered">    debug('uncaught exception %s', err !== <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">      return this;</span>
+Runner.prototype.uncaught = <span class="fstat-no" title="function not covered" >function (err) {</span>
+<span class="cstat-no" title="statement not covered" >  if (err) {</span>
+<span class="cstat-no" title="statement not covered" >    debug('uncaught exception %s', err !== <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      return this;</span>
     }.call(err) ? err : (err.message || err));
   } else {
-<span class="cstat-no" title="statement not covered">    debug('uncaught undefined exception');</span>
-<span class="cstat-no" title="statement not covered">    err = undefinedError();</span>
+<span class="cstat-no" title="statement not covered" >    debug('uncaught undefined exception');</span>
+<span class="cstat-no" title="statement not covered" >    err = undefinedError();</span>
   }
-<span class="cstat-no" title="statement not covered">  err.uncaught = true;</span>
+<span class="cstat-no" title="statement not covered" >  err.uncaught = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var runnable = this.currentRunnable;</span>
+<span class="cstat-no" title="statement not covered" >  var runnable = this.currentRunnable;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!runnable) {</span>
-<span class="cstat-no" title="statement not covered">    runnable = new Runnable('Uncaught error outside test suite');</span>
-<span class="cstat-no" title="statement not covered">    runnable.parent = this.suite;</span>
+<span class="cstat-no" title="statement not covered" >  if (!runnable) {</span>
+<span class="cstat-no" title="statement not covered" >    runnable = new Runnable('Uncaught error outside test suite');</span>
+<span class="cstat-no" title="statement not covered" >    runnable.parent = this.suite;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (this.started) {</span>
-<span class="cstat-no" title="statement not covered">      this.fail(runnable, err);</span>
+<span class="cstat-no" title="statement not covered" >    if (this.started) {</span>
+<span class="cstat-no" title="statement not covered" >      this.fail(runnable, err);</span>
     } else {
       // Can't recover from this failure
-<span class="cstat-no" title="statement not covered">      this.emit('start');</span>
-<span class="cstat-no" title="statement not covered">      this.fail(runnable, err);</span>
-<span class="cstat-no" title="statement not covered">      this.emit('end');</span>
+<span class="cstat-no" title="statement not covered" >      this.emit('start');</span>
+<span class="cstat-no" title="statement not covered" >      this.fail(runnable, err);</span>
+<span class="cstat-no" title="statement not covered" >      this.emit('end');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return;</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  runnable.clearTimeout();</span>
+<span class="cstat-no" title="statement not covered" >  runnable.clearTimeout();</span>
 &nbsp;
   // Ignore errors if complete or pending
-<span class="cstat-no" title="statement not covered">  if (runnable.state || runnable.isPending()) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+<span class="cstat-no" title="statement not covered" >  if (runnable.state || runnable.isPending()) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
-<span class="cstat-no" title="statement not covered">  this.fail(runnable, err);</span>
+<span class="cstat-no" title="statement not covered" >  this.fail(runnable, err);</span>
 &nbsp;
   // recover from test
-<span class="cstat-no" title="statement not covered">  if (runnable.type === 'test') {</span>
-<span class="cstat-no" title="statement not covered">    this.emit('test end', runnable);</span>
-<span class="cstat-no" title="statement not covered">    this.hookUp('afterEach', this.next);</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+<span class="cstat-no" title="statement not covered" >  if (runnable.type === 'test') {</span>
+<span class="cstat-no" title="statement not covered" >    this.emit('test end', runnable);</span>
+<span class="cstat-no" title="statement not covered" >    this.hookUp('afterEach', this.next);</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
  // recover from hooks
-<span class="cstat-no" title="statement not covered">  if (runnable.type === 'hook') {</span>
-<span class="cstat-no" title="statement not covered">    var errSuite = this.suite;</span>
+<span class="cstat-no" title="statement not covered" >  if (runnable.type === 'hook') {</span>
+<span class="cstat-no" title="statement not covered" >    var errSuite = this.suite;</span>
     // if hook failure is in afterEach block
-<span class="cstat-no" title="statement not covered">    if (runnable.fullTitle().indexOf('after each') &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered">      return this.hookErr(err, errSuite, true);</span>
+<span class="cstat-no" title="statement not covered" >    if (runnable.fullTitle().indexOf('after each') &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.hookErr(err, errSuite, true);</span>
     }
     // if hook failure is in beforeEach block
-<span class="cstat-no" title="statement not covered">    if (runnable.fullTitle().indexOf('before each') &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered">      return this.hookErr(err, errSuite, false);</span>
+<span class="cstat-no" title="statement not covered" >    if (runnable.fullTitle().indexOf('before each') &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.hookErr(err, errSuite, false);</span>
     }
     // if hook failure is in after or before blocks
-<span class="cstat-no" title="statement not covered">    return this.nextSuite(errSuite);</span>
+<span class="cstat-no" title="statement not covered" >    return this.nextSuite(errSuite);</span>
   }
 &nbsp;
   // bail
-<span class="cstat-no" title="statement not covered">  this.emit('end');</span>
+<span class="cstat-no" title="statement not covered" >  this.emit('end');</span>
 };
 &nbsp;
 /**
@@ -2894,31 +2896,31 @@ Runner.prototype.uncaught = <span class="fstat-no" title="function not covered">
  *
  * @param {Suite} suite
  */
-<span class="fstat-no" title="function not covered">function cleanSuiteReferences (suite) {</span>
-<span class="fstat-no" title="function not covered">  function cleanArrReferences (arr) {</span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; arr.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">      delete arr[i].fn;</span>
+<span class="fstat-no" title="function not covered" >function cleanSuiteReferences (suite) {</span>
+<span class="fstat-no" title="function not covered" >  function cleanArrReferences (arr) {</span>
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; arr.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      delete arr[i].fn;</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (isArray(suite._beforeAll)) {</span>
-<span class="cstat-no" title="statement not covered">    cleanArrReferences(suite._beforeAll);</span>
+<span class="cstat-no" title="statement not covered" >  if (isArray(suite._beforeAll)) {</span>
+<span class="cstat-no" title="statement not covered" >    cleanArrReferences(suite._beforeAll);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (isArray(suite._beforeEach)) {</span>
-<span class="cstat-no" title="statement not covered">    cleanArrReferences(suite._beforeEach);</span>
+<span class="cstat-no" title="statement not covered" >  if (isArray(suite._beforeEach)) {</span>
+<span class="cstat-no" title="statement not covered" >    cleanArrReferences(suite._beforeEach);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (isArray(suite._afterAll)) {</span>
-<span class="cstat-no" title="statement not covered">    cleanArrReferences(suite._afterAll);</span>
+<span class="cstat-no" title="statement not covered" >  if (isArray(suite._afterAll)) {</span>
+<span class="cstat-no" title="statement not covered" >    cleanArrReferences(suite._afterAll);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (isArray(suite._afterEach)) {</span>
-<span class="cstat-no" title="statement not covered">    cleanArrReferences(suite._afterEach);</span>
+<span class="cstat-no" title="statement not covered" >  if (isArray(suite._afterEach)) {</span>
+<span class="cstat-no" title="statement not covered" >    cleanArrReferences(suite._afterEach);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; suite.tests.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">    delete suite.tests[i].fn;</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; suite.tests.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    delete suite.tests[i].fn;</span>
   }
 }
 &nbsp;
@@ -2932,55 +2934,55 @@ Runner.prototype.uncaught = <span class="fstat-no" title="function not covered">
  * @param {Function} fn
  * @return {Runner} Runner instance.
  */
-Runner.prototype.run = <span class="fstat-no" title="function not covered">function (fn) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
-<span class="cstat-no" title="statement not covered">  var rootSuite = this.suite;</span>
+Runner.prototype.run = <span class="fstat-no" title="function not covered" >function (fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  var rootSuite = this.suite;</span>
 &nbsp;
   // If there is an `only` filter
-<span class="cstat-no" title="statement not covered">  if (this.hasOnly) {</span>
-<span class="cstat-no" title="statement not covered">    filterOnly(rootSuite);</span>
+<span class="cstat-no" title="statement not covered" >  if (this.hasOnly) {</span>
+<span class="cstat-no" title="statement not covered" >    filterOnly(rootSuite);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  fn = fn || <span class="fstat-no" title="function not covered">function () {</span>};</span>
+<span class="cstat-no" title="statement not covered" >  fn = fn || <span class="fstat-no" title="function not covered" >function () {</span>};</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function uncaught (err) {</span>
-<span class="cstat-no" title="statement not covered">    self.uncaught(err);</span>
+<span class="fstat-no" title="function not covered" >  function uncaught (err) {</span>
+<span class="cstat-no" title="statement not covered" >    self.uncaught(err);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered">  function start () {</span>
-<span class="cstat-no" title="statement not covered">    self.started = true;</span>
-<span class="cstat-no" title="statement not covered">    self.emit('start');</span>
-<span class="cstat-no" title="statement not covered">    self.runSuite(rootSuite, <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">      debug('finished running');</span>
-<span class="cstat-no" title="statement not covered">      self.emit('end');</span>
+<span class="fstat-no" title="function not covered" >  function start () {</span>
+<span class="cstat-no" title="statement not covered" >    self.started = true;</span>
+<span class="cstat-no" title="statement not covered" >    self.emit('start');</span>
+<span class="cstat-no" title="statement not covered" >    self.runSuite(rootSuite, <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      debug('finished running');</span>
+<span class="cstat-no" title="statement not covered" >      self.emit('end');</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  debug('start');</span>
+<span class="cstat-no" title="statement not covered" >  debug('start');</span>
 &nbsp;
   // references cleanup to avoid memory leaks
-<span class="cstat-no" title="statement not covered">  this.on('suite end', cleanSuiteReferences);</span>
+<span class="cstat-no" title="statement not covered" >  this.on('suite end', cleanSuiteReferences);</span>
 &nbsp;
   // callback
-<span class="cstat-no" title="statement not covered">  this.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">    debug('end');</span>
-<span class="cstat-no" title="statement not covered">    process.removeListener('uncaughtException', uncaught);</span>
-<span class="cstat-no" title="statement not covered">    fn(self.failures);</span>
+<span class="cstat-no" title="statement not covered" >  this.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    debug('end');</span>
+<span class="cstat-no" title="statement not covered" >    process.removeListener('uncaughtException', uncaught);</span>
+<span class="cstat-no" title="statement not covered" >    fn(self.failures);</span>
   });
 &nbsp;
   // uncaught exception
-<span class="cstat-no" title="statement not covered">  process.on('uncaughtException', uncaught);</span>
+<span class="cstat-no" title="statement not covered" >  process.on('uncaughtException', uncaught);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (this._delay) {</span>
+<span class="cstat-no" title="statement not covered" >  if (this._delay) {</span>
     // for reporters, I guess.
     // might be nice to debounce some dots while we wait.
-<span class="cstat-no" title="statement not covered">    this.emit('waiting', rootSuite);</span>
-<span class="cstat-no" title="statement not covered">    rootSuite.once('run', start);</span>
+<span class="cstat-no" title="statement not covered" >    this.emit('waiting', rootSuite);</span>
+<span class="cstat-no" title="statement not covered" >    rootSuite.once('run', start);</span>
   } else {
-<span class="cstat-no" title="statement not covered">    start();</span>
+<span class="cstat-no" title="statement not covered" >    start();</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this;</span>
+<span class="cstat-no" title="statement not covered" >  return this;</span>
 };
 &nbsp;
 /**
@@ -2989,11 +2991,11 @@ Runner.prototype.run = <span class="fstat-no" title="function not covered">funct
  * @api public
  * @return {Runner} Runner instance.
  */
-Runner.prototype.abort = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  debug('aborting');</span>
-<span class="cstat-no" title="statement not covered">  this._abort = true;</span>
+Runner.prototype.abort = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  debug('aborting');</span>
+<span class="cstat-no" title="statement not covered" >  this._abort = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this;</span>
+<span class="cstat-no" title="statement not covered" >  return this;</span>
 };
 &nbsp;
 /**
@@ -3003,28 +3005,28 @@ Runner.prototype.abort = <span class="fstat-no" title="function not covered">fun
  * @returns {Boolean}
  * @api private
  */
-<span class="fstat-no" title="function not covered">function filterOnly (suite) {</span>
-<span class="cstat-no" title="statement not covered">  if (suite._onlyTests.length) {</span>
+<span class="fstat-no" title="function not covered" >function filterOnly (suite) {</span>
+<span class="cstat-no" title="statement not covered" >  if (suite._onlyTests.length) {</span>
     // If the suite contains `only` tests, run those and ignore any nested suites.
-<span class="cstat-no" title="statement not covered">    suite.tests = suite._onlyTests;</span>
-<span class="cstat-no" title="statement not covered">    suite.suites = [];</span>
+<span class="cstat-no" title="statement not covered" >    suite.tests = suite._onlyTests;</span>
+<span class="cstat-no" title="statement not covered" >    suite.suites = [];</span>
   } else {
     // Otherwise, do not run any of the tests in this suite.
-<span class="cstat-no" title="statement not covered">    suite.tests = [];</span>
-<span class="cstat-no" title="statement not covered">    utils.forEach(suite._onlySuites, <span class="fstat-no" title="function not covered">function (onlySuite) {</span></span>
+<span class="cstat-no" title="statement not covered" >    suite.tests = [];</span>
+<span class="cstat-no" title="statement not covered" >    utils.forEach(suite._onlySuites, <span class="fstat-no" title="function not covered" >function (onlySuite) {</span></span>
       // If there are other `only` tests/suites nested in the current `only` suite, then filter that `only` suite.
       // Otherwise, all of the tests on this `only` suite should be run, so don't filter it.
-<span class="cstat-no" title="statement not covered">      if (hasOnly(onlySuite)) {</span>
-<span class="cstat-no" title="statement not covered">        filterOnly(onlySuite);</span>
+<span class="cstat-no" title="statement not covered" >      if (hasOnly(onlySuite)) {</span>
+<span class="cstat-no" title="statement not covered" >        filterOnly(onlySuite);</span>
       }
     });
     // Run the `only` suites, as well as any other suites that have `only` tests/suites as descendants.
-<span class="cstat-no" title="statement not covered">    suite.suites = filter(suite.suites, <span class="fstat-no" title="function not covered">function (childSuite) {</span></span>
-<span class="cstat-no" title="statement not covered">      return indexOf(suite._onlySuites, childSuite) !== -1 || filterOnly(childSuite);</span>
+<span class="cstat-no" title="statement not covered" >    suite.suites = filter(suite.suites, <span class="fstat-no" title="function not covered" >function (childSuite) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return indexOf(suite._onlySuites, childSuite) !== -1 || filterOnly(childSuite);</span>
     });
   }
   // Keep the suite only if there is something to run
-<span class="cstat-no" title="statement not covered">  return suite.tests.length || suite.suites.length;</span>
+<span class="cstat-no" title="statement not covered" >  return suite.tests.length || suite.suites.length;</span>
 }
 &nbsp;
 /**
@@ -3034,8 +3036,8 @@ Runner.prototype.abort = <span class="fstat-no" title="function not covered">fun
  * @returns {Boolean}
  * @api private
  */
-<span class="fstat-no" title="function not covered">function hasOnly (suite) {</span>
-<span class="cstat-no" title="statement not covered">  return suite._onlyTests.length || suite._onlySuites.length || some(suite.suites, hasOnly);</span>
+<span class="fstat-no" title="function not covered" >function hasOnly (suite) {</span>
+<span class="cstat-no" title="statement not covered" >  return suite._onlyTests.length || suite._onlySuites.length || some(suite.suites, hasOnly);</span>
 }
 &nbsp;
 /**
@@ -3046,38 +3048,38 @@ Runner.prototype.abort = <span class="fstat-no" title="function not covered">fun
  * @param {Array} globals
  * @return {Array}
  */
-<span class="fstat-no" title="function not covered">function filterLeaks (ok, globals) {</span>
-<span class="cstat-no" title="statement not covered">  return filter(globals, <span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="fstat-no" title="function not covered" >function filterLeaks (ok, globals) {</span>
+<span class="cstat-no" title="statement not covered" >  return filter(globals, <span class="fstat-no" title="function not covered" >function (key) {</span></span>
     // Firefox and Chrome exposes iframes as index inside the window object
-<span class="cstat-no" title="statement not covered">    if (/^\d+/.test(key)) {</span>
-<span class="cstat-no" title="statement not covered">      return false;</span>
+<span class="cstat-no" title="statement not covered" >    if (/^\d+/.test(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
     }
 &nbsp;
     // in firefox
     // if runner runs in an iframe, this iframe's window.getInterface method
     // not init at first it is assigned in some seconds
-<span class="cstat-no" title="statement not covered">    if (global.navigator &amp;&amp; (/^getInterface/).test(key)) {</span>
-<span class="cstat-no" title="statement not covered">      return false;</span>
+<span class="cstat-no" title="statement not covered" >    if (global.navigator &amp;&amp; (/^getInterface/).test(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
     }
 &nbsp;
     // an iframe could be approached by window[iframeIndex]
     // in ie6,7,8 and opera, iframeIndex is enumerable, this could cause leak
-<span class="cstat-no" title="statement not covered">    if (global.navigator &amp;&amp; (/^\d+/).test(key)) {</span>
-<span class="cstat-no" title="statement not covered">      return false;</span>
+<span class="cstat-no" title="statement not covered" >    if (global.navigator &amp;&amp; (/^\d+/).test(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
     }
 &nbsp;
     // Opera and IE expose global variables for HTML element IDs (issue #243)
-<span class="cstat-no" title="statement not covered">    if (/^mocha-/.test(key)) {</span>
-<span class="cstat-no" title="statement not covered">      return false;</span>
+<span class="cstat-no" title="statement not covered" >    if (/^mocha-/.test(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var matched = filter(ok, <span class="fstat-no" title="function not covered">function (ok) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (~ok.indexOf('*')) {</span>
-<span class="cstat-no" title="statement not covered">        return key.indexOf(ok.split('*')[0]) === 0;</span>
+<span class="cstat-no" title="statement not covered" >    var matched = filter(ok, <span class="fstat-no" title="function not covered" >function (ok) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (~ok.indexOf('*')) {</span>
+<span class="cstat-no" title="statement not covered" >        return key.indexOf(ok.split('*')[0]) === 0;</span>
       }
-<span class="cstat-no" title="statement not covered">      return key === ok;</span>
+<span class="cstat-no" title="statement not covered" >      return key === ok;</span>
     });
-<span class="cstat-no" title="statement not covered">    return !matched.length &amp;&amp; (!global.navigator || key !== 'onerror');</span>
+<span class="cstat-no" title="statement not covered" >    return !matched.length &amp;&amp; (!global.navigator || key !== 'onerror');</span>
   });
 }
 &nbsp;
@@ -3087,29 +3089,28 @@ Runner.prototype.abort = <span class="fstat-no" title="function not covered">fun
  * @return {Array}
  * @api private
  */
-<span class="fstat-no" title="function not covered">function extraGlobals () {</span>
-<span class="cstat-no" title="statement not covered">  if (typeof process === 'object' &amp;&amp; typeof process.version === 'string') {</span>
-<span class="cstat-no" title="statement not covered">    var parts = process.version.split('.');</span>
-<span class="cstat-no" title="statement not covered">    var nodeVersion = utils.reduce(parts, <span class="fstat-no" title="function not covered">function (a, v) {</span></span>
-<span class="cstat-no" title="statement not covered">      return a &lt;&lt; 8 | v;</span>
+<span class="fstat-no" title="function not covered" >function extraGlobals () {</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof process === 'object' &amp;&amp; typeof process.version === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    var parts = process.version.split('.');</span>
+<span class="cstat-no" title="statement not covered" >    var nodeVersion = utils.reduce(parts, <span class="fstat-no" title="function not covered" >function (a, v) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return a &lt;&lt; 8 | v;</span>
     });
 &nbsp;
     // 'errno' was renamed to process._errno in v0.9.11.
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (nodeVersion &lt; 0x00090B) {</span>
-<span class="cstat-no" title="statement not covered">      return ['errno'];</span>
+<span class="cstat-no" title="statement not covered" >    if (nodeVersion &lt; 0x00090B) {</span>
+<span class="cstat-no" title="statement not covered" >      return ['errno'];</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return [];</span>
+<span class="cstat-no" title="statement not covered" >  return [];</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 03:50:05 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:14:19 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
