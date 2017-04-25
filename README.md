@@ -1,6 +1,6 @@
 # npmtest-mocha
 
-#### test coverage for  [mocha (v3.2.0)](https://mochajs.org)  [![npm package](https://img.shields.io/npm/v/npmtest-mocha.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mocha) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mocha.svg)](https://travis-ci.org/npmtest/node-npmtest-mocha)
+#### basic test coverage for  [mocha (v3.3.0)](https://mochajs.org)  [![npm package](https://img.shields.io/npm/v/npmtest-mocha.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mocha) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mocha.svg)](https://travis-ci.org/npmtest/node-npmtest-mocha)
 
 #### simple, flexible, fun test framework
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-mocha/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-mocha/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-mocha/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-mocha/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mocha/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mocha/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-mocha/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-mocha/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mocha/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mocha/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-mocha/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-mocha/build/coverage.html/index.html)
 
@@ -909,6 +909,10 @@
             "url": "https://github.com/rmunson"
         },
         {
+            "name": "Rustem Mustafin",
+            "url": "https://github.com/rulikkk"
+        },
+        {
             "name": "Ryan",
             "url": "https://github.com/ryan-shaw"
         },
@@ -1148,10 +1152,10 @@
     "dependencies": {
         "browser-stdout": "1.3.0",
         "commander": "2.9.0",
-        "debug": "2.2.0",
-        "diff": "1.4.0",
+        "debug": "2.6.0",
+        "diff": "3.2.0",
         "escape-string-regexp": "1.0.5",
-        "glob": "7.0.5",
+        "glob": "7.1.1",
         "growl": "1.9.2",
         "json3": "3.3.2",
         "lodash.create": "3.1.1",
@@ -1163,31 +1167,30 @@
         "assert": "^1.4.1",
         "browserify": "^13.0.0",
         "coffee-script": "^1.10.0",
-        "eslint": "^2.13.1",
-        "eslint-config-semistandard": "^6.0.2",
-        "eslint-config-standard": "^5.0.0",
-        "eslint-plugin-promise": "^2.0.1",
-        "eslint-plugin-standard": "1.3.2",
+        "coveralls": "^2.11.15",
         "expect.js": "^0.3.1",
-        "karma": "^1.1.0",
+        "istanbul-combine": "^0.3.0",
+        "karma": "1.3.0",
         "karma-browserify": "^5.0.5",
         "karma-chrome-launcher": "^2.0.0",
         "karma-expect": "^1.1.2",
         "karma-mocha": "^1.3.0",
-        "karma-phantomjs-launcher": "^0.2.3",
-        "karma-sauce-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-sauce-launcher": "github:coderbyheart/karma-sauce-launcher",
         "karma-spec-reporter": "0.0.26",
+        "nyc": "^10.0.0",
         "os-name": "^2.0.1",
         "phantomjs": "1.9.8",
         "rimraf": "^2.5.2",
-        "should": "^9.0.2",
+        "semistandard": "^9.2.1",
+        "should": "^11.1.1",
         "through2": "^2.0.1",
         "watchify": "^3.7.0"
     },
     "directories": {},
     "dist": {
-        "shasum": "7dc4f45e5088075171a68896814e6ae9eb7a85e3",
-        "tarball": "https://registry.npmjs.org/mocha/-/mocha-3.2.0.tgz"
+        "shasum": "d29b7428d3f52c82e2e65df1ecb7064e1aabbfb5",
+        "tarball": "https://registry.npmjs.org/mocha/-/mocha-3.3.0.tgz"
     },
     "engines": {
         "node": ">= 0.10.x",
@@ -1204,7 +1207,13 @@
         "LICENSE",
         "bower.json"
     ],
-    "gitHead": "b51e36014d9c6db07aee3057579c35315ec4efd7",
+    "gitHead": "fb1687ec16e8ae347ca4498560f984e575224d59",
+    "greenkeeper": {
+        "ignore": [
+            "phantomjs",
+            "lodash.create"
+        ]
+    },
     "homepage": "https://mochajs.org",
     "keywords": [
         "mocha",
@@ -1221,6 +1230,9 @@
         },
         {
             "name": "dasilvacontin"
+        },
+        {
+            "name": "munter"
         }
     ],
     "name": "mocha",
@@ -1230,9 +1242,19 @@
         "url": "git+https://github.com/mochajs/mocha.git"
     },
     "scripts": {
-        "test": "make test"
+        "coverage": "COVERAGE=true npm run test",
+        "postcoverage": "istanbul-combine -d coverage -r lcov -r html coverage/reports/*/*.json",
+        "precoverage": "rm -rf coverage",
+        "preversion": "make test && make mocha.js && git add mocha.js",
+        "test": "make test && make clean"
     },
-    "version": "3.2.0"
+    "semistandard": {
+        "ignore": [
+            "/mocha.js",
+            "/lib/to-iso-string/**/*.js"
+        ]
+    },
+    "version": "3.3.0"
 }
 ```
 
